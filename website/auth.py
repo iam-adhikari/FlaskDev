@@ -56,7 +56,7 @@ def signup():
             flash('Password too short', categoru='error')
         else:
              #add user to database
-            new_user = User(email=email, password=generate_password_hash(password, method='sha256'), firstName=firstName, lastName=lastName,)
+            new_user = User(email=email, password=generate_password_hash(password), firstName=firstName, lastName=lastName,)
             db.session.add(new_user)
             db.session.commit()
             flash('Account created', category='success')
