@@ -26,7 +26,6 @@ def login():
             flash('User not found', category='error')
     return render_template("login.html", user=current_user)
 
-
 @auth.route('/logout')
 @login_required
 def logout():
@@ -65,6 +64,4 @@ def signup():
 
             return redirect(url_for('views.home'))
 
-
-           
     return render_template('signup.html', user=current_user)
